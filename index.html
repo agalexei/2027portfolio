@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ara Giulambarian, Senior Experience Designer in Sydney. Experience in business lending, insurance, e-commerce and AI-enabled design.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="./favicon.ico?v=2">
+<title>Ara Giulambarian · Portfolio</title>
+<link rel="stylesheet" href="./site.css">
+<script>
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    try {
+      if (!sessionStorage.getItem('ara-resume-intro-seen')) {
+        sessionStorage.setItem('ara-resume-intro-seen', '1');
+        document.documentElement.dataset.resumeIntro = '';
+      }
+    } catch {
+      // Show the resume immediately if session storage is unavailable.
+    }
+  }
+</script>
+<style>
+  .resume-intro { display: none; }
+  .resume-intro .resume-intro-mark { width: 52px; height: 52px; }
+  @media screen and (prefers-reduced-motion: no-preference) {
+    [data-resume-intro] .resume-intro {
+      --intro-duration: 1.6s;
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 16px;
+      padding: 12px;
+      background: var(--background);
+      color: var(--text);
+      text-align: center;
+      font-size: clamp(11px, 3.4vw, 15px);
+      animation: resume-intro-dismiss var(--intro-duration) linear both;
+    }
+    [data-resume-intro] body:focus-within .resume-intro { display: none; }
+    .resume-intro-track {
+      width: 88px;
+      height: 2px;
+      background: var(--rule);
+    }
+    .resume-intro-fill {
+      display: block;
+      height: 100%;
+      background: currentColor;
+      transform-origin: left;
+      animation: resume-intro-progress var(--intro-duration) linear both;
+    }
+    @keyframes resume-intro-dismiss {
+      0%, 90% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+    @keyframes resume-intro-progress {
+      from { transform: scaleX(0); }
+      90%, 100% { transform: scaleX(1); }
+    }
+  }
+  @page { size: A4; margin: 12mm 10mm; }
+  @media print {
+    :root {
+      color-scheme: light;
+      --background: #fff;
+      --text: #1c1c1c;
+      --muted: #494949;
+      --metadata: var(--muted);
+      --rule: #aaa;
+      font: 8.7pt/1.35 Arial, sans-serif;
+      letter-spacing: normal;
+    }
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(0, 43%) minmax(0, 1fr);
+      column-gap: 8mm;
+      grid-template-areas: "mast experience" "about experience" "education experience" "skills experience" "extras experience";
+      grid-template-rows: repeat(4, auto) 1fr;
+      align-items: start;
+    }
+    .resume, .content { display: contents; }
+    .masthead { grid-area: mast; display: block; padding: 0 0 5mm; min-height: 0; font-size: inherit; line-height: inherit; }
+    .masthead h1 { font: 800 23pt/1.08 Montserrat, Arial, sans-serif; letter-spacing: -.03em; }
+    .masthead .site-brand { display: block; }
+    .masthead h1 .site-name > span { display: block; }
+    .screen-only, .footer { display: none; }
+    .print-only { display: block; }
+    .masthead .role {
+      margin-top: 3mm;
+      font-size: inherit;
+      line-height: inherit;
+      color: var(--text);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+    .about { grid-area: about; display: flex; flex-direction: column; border: 0; margin-bottom: 4mm; }
+    .contact-list .print-heading { display: block; padding: 0; }
+    .contact-list > .screen-only, .contact-list a > .screen-only { display: none; }
+    .contact-list { order: -1; margin-bottom: 4mm; font-size: inherit; }
+    .contact-list > * { min-height: 0; padding: .6mm 0; border: 0; }
+    .contact-list a { text-decoration: underline; }
+    .contact-list > a { font-weight: 400; }
+    .bio { min-height: 0; padding: 0; color: var(--muted); line-height: inherit; }
+    .section { padding: 3.5mm 0 4mm; }
+    .section-heading, .print-heading { margin: 0 0 2mm; text-transform: uppercase; font-size: 8.5pt; letter-spacing: .09em; color: var(--text); }
+    .experience { grid-area: experience; border: 0; border-left: 1px solid var(--rule); padding: 0 0 0 6mm; align-self: stretch; }
+    .experience .section-heading { margin-bottom: 3mm; }
+    .jobs { gap: 3.5mm; padding: 0; }
+    .job { display: block; padding-top: 3mm; break-inside: avoid; }
+    .job:first-child { border: 0; padding-top: 0; }
+    .job h3 { font-size: 10pt; margin-bottom: .5mm; }
+    .job-meta { margin-bottom: 2mm; line-height: inherit; }
+    .job-meta span:first-child { color: inherit; }
+    .job-meta span { display: inline; }
+    .job-meta span + span::before { content: " · "; }
+    .job-meta span:last-child { display: none; }
+    .job-details { font: inherit; color: var(--muted); }
+    .job-details li + li { margin-top: 1.5mm; }
+    .education { grid-area: education; }
+    .education-row { display: block; }
+    .education-row + .education-row { margin-top: 2mm; }
+    .education-row h3 { font-weight: 600; }
+    .skills { grid-area: skills; }
+    .skills-grid { grid-template-columns: minmax(0, 1fr); gap: 2mm; font-size: inherit; }
+    .skills-grid h3 { font-weight: 600; color: var(--text); margin: 0; }
+    .skills-grid li + li { margin: 0; }
+    .extras { grid-area: extras; display: block; }
+    .extras .section { padding: 3.5mm 0; }
+    .extras .section-heading { margin-bottom: 2mm; }
+    .recognition { display: none; }
+  }
+</style>
+<!-- BEGIN GENERATED SEARCH AND SOCIAL METADATA -->
+<meta property="og:title" content="Ara Giulambarian · Senior Experience Designer">
+<meta property="og:description" content="Ara Giulambarian, Senior Experience Designer in Sydney. Experience in business lending, insurance, e-commerce and AI-enabled design.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ara Giulambarian · Senior Experience Designer">
+<meta name="twitter:description" content="Ara Giulambarian, Senior Experience Designer in Sydney. Experience in business lending, insurance, e-commerce and AI-enabled design.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ara Giulambarian",
+  "jobTitle": "Senior Experience Designer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Westpac"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/arglm/"
+  ]
+}
+</script>
+<!-- END GENERATED SEARCH AND SOCIAL METADATA -->
+</head>
+<body>
+<div class="resume-intro" aria-hidden="true">
+  <img class="brand-mark resume-intro-mark" src="./logo.svg" width="52" height="52" alt="">
+  <p>Welcome · Ara Giulambarian · Senior Experience Designer</p>
+  <span class="resume-intro-track"><span class="resume-intro-fill"></span></span>
+</div>
+<div class="shell">
+  <header class="masthead" id="top" tabindex="-1">
+    <a class="site-brand" href="./index.html" aria-label="Ara Giulambarian, resume">
+      <img class="brand-mark screen-only" src="./logo.svg" width="40" height="40" alt="">
+      <div>
+        <h1><span class="site-name"><span>Ara</span> <span>Giulambarian<span class="screen-only">,</span></span></span></h1>
+        <p class="role">Senior Experience Designer</p>
+      </div>
+    </a>
+    <nav class="masthead-nav screen-only" aria-label="Page navigation">
+      <a href="./about/index.html">About</a>
+      <a href="./case-studies/index.html">Case studies</a>
+    </nav>
+  </header>
+
+  <main class="resume">
+    <aside class="about" id="about" aria-label="About Ara and contact information">
+      <div class="bio">
+        <h2 class="print-only print-heading">Summary</h2>
+        <p>I’m a Senior Experience Designer in Sydney with 5+ years’ experience across banking, insurance and e-commerce. I design complex lending journeys at Westpac and build reusable AI workflows for design teams.</p>
+      </div>
+      <address class="contact-list">
+        <h2 class="print-only print-heading">Contact</h2>
+        <a href="mailto:ara.giulambarian@gmail.com">ara.giulambarian@gmail.com <span class="screen-only" aria-hidden="true">↗</span></a>
+        <a href="tel:+61449098757">+61 449 098 757 <span class="screen-only" aria-hidden="true">↗</span></a>
+        <a href="https://www.linkedin.com/in/arglm/">LinkedIn<span class="print-only"> · linkedin.com/in/arglm</span> <span class="screen-only" aria-hidden="true">↗</span></a>
+        <span class="print-only">Sydney, Australia</span>
+      </address>
+    </aside>
+
+    <div class="content">
+      <section class="section experience" aria-labelledby="experience">
+        <h2 class="section-heading" id="experience">Experience</h2>
+        <div class="jobs">
+          <article class="job">
+            <div>
+              <h3>Senior Experience Designer</h3>
+              <p class="job-meta"><span>Westpac · Business &amp; Wealth</span><span>Jun 2026 – Present</span><span>Sydney, NSW</span></p>
+            </div>
+            <ul class="job-details">
+              <li>Own design for the BizEdge credit memo and an integration in development that brings together two additional systems. Shape workflows with bankers, credit managers, product, engineering and risk partners.</li>
+              <li>Prototype AI-assisted design workflows in AMP and Copilot, using reusable skills with defined inputs and outputs for reverse briefs, research synthesis and testing plans. Explore how Figma integrations and Miro AI can support those workflows.</li>
+              <li>Built an AI-assisted workflow for presentation storytelling and slide creation that colleagues now use.</li>
+              <li>Developed a concept for conversational AI to recommend industry classification (ANZSIC) codes to bankers, following a 2024–2026 review that found 15% of selected codes were incorrect.</li>
+            </ul>
+          </article>
+          <article class="job">
+            <div>
+              <h3>Product Designer</h3>
+              <p class="job-meta"><span>Insurance Australia Group (NRMA)</span><span>Jun 2022 – Jun 2026</span><span>Sydney, NSW</span></p>
+            </div>
+            <ul class="job-details">
+              <li>Cut time to quote by approximately 50% in the Building Only flow and increased selection of higher-value cover by 75% compared with the legacy experience by leading the redesign of NRMA’s Home Insurance Quote &amp; Buy journey.</li>
+              <li>Identified where customers struggled with sum insured through interviews, usability testing and behavioural analytics, then used the findings to simplify the quote journey and guide experimentation.</li>
+              <li>Improved design consistency through reusable components and clearer information architecture. Partnered with product, engineering, analytics and underwriting to prioritise changes and share findings across the portfolio.</li>
+            </ul>
+          </article>
+          <article class="job">
+            <div>
+              <h3>UX/UI Designer</h3>
+              <p class="job-meta"><span>Best &amp; Less</span><span>2021–2022</span><span>Sydney, NSW</span></p>
+            </div>
+            <ul class="job-details">
+              <li>Designed end-to-end e-commerce journeys, using customer research and rapid prototyping to improve usability and working with product and engineering to balance commercial, brand and accessibility requirements.</li>
+              <li>Established UX workflows, prototyping standards and design guidelines to clarify handover.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills" aria-labelledby="skills">
+        <h2 class="section-heading" id="skills">Skills</h2>
+        <div class="skills-grid">
+          <div>
+            <h3>Product design</h3>
+            <ul><li>End-to-end experience design</li><li>Interaction design and prototyping</li><li>Design systems and accessibility</li><li>Journey mapping and information architecture</li></ul>
+          </div>
+          <div>
+            <h3>Research and optimisation</h3>
+            <ul><li>Discovery and workshop facilitation</li><li>User research and usability testing</li><li>Behavioural analytics and A/B testing</li></ul>
+          </div>
+          <div>
+            <h3>Design leadership and AI</h3>
+            <ul><li>Stakeholder alignment and cross-functional delivery</li><li>Reusable AI workflows and agent prototyping</li><li>Design storytelling and research synthesis</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section education" aria-labelledby="education">
+        <h2 class="section-heading" id="education">Education</h2>
+        <div class="education-row">
+          <h3>University of Adelaide · Trilogy Education</h3>
+          <p>UX/UI Bootcamp<br><span class="muted">2020–2021</span></p>
+        </div>
+        <div class="education-row">
+          <h3>Macquarie University</h3>
+          <p>Bachelor of Global Business<br><span class="muted">2017–2020</span></p>
+        </div>
+      </section>
+
+      <div class="extras">
+        <section class="section recognition" aria-labelledby="recognition">
+          <h2 class="section-heading" id="recognition">Recognition</h2>
+          <p>Received nine internal awards at IAG between January and April 2026.</p>
+        </section>
+        <section class="section" aria-labelledby="tools">
+          <h2 class="section-heading" id="tools">Tools</h2>
+          <p>Figma, Miro, Google Analytics, Tealeaf, Adobe Creative Suite, AMP and Microsoft Copilot.</p>
+        </section>
+      </div>
+      <footer class="footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="./index.html" aria-current="page">Home</a>
+          <a href="./about/index.html">About</a>
+          <a href="./case-studies/index.html">Case studies</a>
+          <a href="mailto:ara.giulambarian@gmail.com">Contact me</a>
+        </nav>
+        <div class="footer-utilities">
+          <a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+          <button type="button" class="print-button" id="print-resume" hidden>Print / save PDF <span aria-hidden="true">↗</span></button>
+        </div>
+      </footer>
+    </div>
+  </main>
+</div>
+<script>
+  const printButton = document.querySelector('#print-resume');
+  printButton.hidden = false;
+  printButton.addEventListener('click', () => window.print());
+</script>
+</body>
+</html>
