@@ -35,6 +35,7 @@
   h1, h2, h3, p, ul, address { margin: 0; }
   h1, h2, h3 { font-weight: 600; }
   a { color: inherit; text-decoration: none; }
+  .text-link { text-decoration: underline; text-underline-offset: .2em; }
   :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   .masthead:focus { outline: none; }
   ul { padding-inline-start: 1.4em; }
