@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://agalexei.github.io/2027portfolio/sitemap.xml
