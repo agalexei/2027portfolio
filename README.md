@@ -1,6 +1,6 @@
 # Ara Giulambarian · GitHub Pages project
 
-This static project includes the resume, About page, case studies index and five detail pages. Pages, styles, scripts, images and fonts are included. Serve the folder directly. The project needs no package installation, hosting build or backend.
+This static project includes the resume, About page, case studies index and six detail pages. Pages, styles, scripts, images and fonts are included. Serve the folder directly. The project needs no package installation, hosting build or backend.
 
 ## Set the public URL
 

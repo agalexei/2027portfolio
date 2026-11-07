@@ -1,0 +1,235 @@
+.cia-study .case-content {
+  min-width: 0;
+}
+
+.cia-study :is(section[id], h2[id], h3[id]) {
+  scroll-margin-top: 24px;
+}
+
+.cia-study .cia-eyebrow {
+  color: var(--story-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  margin: 0 0 10px;
+}
+
+.cia-study .cia-toc {
+  display: grid;
+  margin-top: 24px;
+}
+
+.cia-study :is(.cia-toc, .cia-jumps) a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.cia-study .cia-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 12px;
+}
+
+.cia-study .case-section p a {
+  color: var(--story-accent);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.cia-study .cia-rationale {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  max-width: 70ch;
+}
+
+.cia-study .cia-rationale > div {
+  display: grid;
+  grid-template-columns: minmax(0, 140px) minmax(0, 1fr);
+  gap: 5px 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--story-rule);
+}
+
+.cia-study .cia-rationale dt {
+  font-weight: 600;
+  color: var(--story-accent);
+}
+
+.cia-study .cia-rationale dd {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cia-study .cia-comparison h3,
+.cia-study .cia-guide h3 {
+  font-size: var(--subhead-size);
+  line-height: 1.25;
+}
+
+.cia-study .cia-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.cia-study .cia-pair figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.cia-study .cia-pair figcaption {
+  margin-bottom: 7px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cia-study .cia-screen {
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f7f9f4;
+}
+
+.cia-study .cia-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cia-study .cia-mobile {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--story-rule);
+}
+
+.cia-study .cia-mobile summary {
+  min-height: 24px;
+  cursor: pointer;
+  color: var(--story-accent);
+}
+
+.cia-study .cia-guide h3 {
+  margin: 26px 0 10px;
+}
+
+.cia-study .cia-logo-sample {
+  display: inline-block;
+  margin: 4px 0;
+  padding: 18px;
+  border-radius: 6px;
+  background: #f7f9f4;
+}
+
+.cia-study .cia-logo-sample img {
+  display: block;
+  width: min(100%, 235px);
+  height: auto;
+}
+
+.cia-study .cia-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.cia-study .cia-swatches li {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--story-rule);
+}
+
+.cia-study .cia-swatch {
+  height: 38px;
+  margin-bottom: 3px;
+  background: var(--swatch);
+}
+
+.cia-study .cia-swatches small,
+.cia-study .cia-swatches code {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.cia-study :is(.cia-type-sample, .cia-component-samples) {
+  padding: clamp(12px, 3vw, 24px);
+  border-radius: 6px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: normal;
+}
+
+.cia-study .cia-type-sample {
+  background: #f7f9f4;
+  color: #172e25;
+}
+
+.cia-study .cia-type-sample strong {
+  display: block;
+  font-size: clamp(22px, 5vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+
+.cia-study .cia-type-sample span {
+  color: #456055;
+  font-size: 13px;
+}
+
+.cia-study .cia-component-samples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #062e23;
+}
+
+.cia-study .cia-component-samples span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 8px 14px;
+  border: 1px solid #a9c2ae;
+  border-radius: .8rem;
+  color: #fff;
+  background: #f3fff318;
+  font-weight: 750;
+}
+
+.cia-study .cia-component-samples span:first-child {
+  color: #062e23;
+  background: #e5f484;
+  border-color: #becb65;
+}
+
+.cia-study .cia-live {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--story-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: .24em;
+}
+
+@media (max-width: 560px) {
+  .cia-study .cia-rationale > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cia-study .cia-desktop {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
