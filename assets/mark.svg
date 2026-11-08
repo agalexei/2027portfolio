@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460">
+  <defs>
+    <path id="opening" d="M197 48A86 86 0 0 1 264 208A116 116 0 0 0 197 48Z"/>
+    <mask id="sign" maskUnits="userSpaceOnUse" x="0" y="0" width="460" height="460">
+      <path fill="#fff" d="M151.7 42.3A116 116 0 0 1 307.36 41.91 116 116 0 0 1 417.7 151.7 116 116 0 0 1 418.09 307.36 116 116 0 0 1 308.3 417.7 116 116 0 0 1 152.64 418.09 116 116 0 0 1 42.3 308.3 116 116 0 0 1 41.91 152.64 116 116 0 0 1 151.7 42.3Z"/>
+      <g fill="#000">
+      <use href="#opening" transform="rotate(0 230 230)"/>
+      <use href="#opening" transform="rotate(45 230 230)"/>
+      <use href="#opening" transform="rotate(90 230 230)"/>
+      <use href="#opening" transform="rotate(135 230 230)"/>
+      <use href="#opening" transform="rotate(180 230 230)"/>
+      <use href="#opening" transform="rotate(225 230 230)"/>
+      <use href="#opening" transform="rotate(270 230 230)"/>
+      <use href="#opening" transform="rotate(315 230 230)"/>
+      </g>
+    </mask>
+  </defs>
+  <rect width="460" height="460" fill="#ff2b51" mask="url(#sign)"/>
+</svg>

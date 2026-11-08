@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <defs>
+    <radialGradient id="halo">
+      <stop offset=".37" stop-color="#701025" stop-opacity=".08"/>
+      <stop offset=".68" stop-color="#ff003d" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#ff003d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="enamel" x1="54" y1="400" x2="385" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#430a19"/>
+      <stop offset=".49" stop-color="#a91233"/>
+      <stop offset="1" stop-color="#500b20"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="44" y1="392" x2="407" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8d1b34"/>
+      <stop offset=".46" stop-color="#ff2b51"/>
+      <stop offset=".75" stop-color="#ff5273"/>
+      <stop offset="1" stop-color="#9b1632"/>
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <path id="outline" d="M151.7 42.3A116 116 0 0 1 307.36 41.91 116 116 0 0 1 417.7 151.7 116 116 0 0 1 418.09 307.36 116 116 0 0 1 308.3 417.7 116 116 0 0 1 152.64 418.09 116 116 0 0 1 42.3 308.3 116 116 0 0 1 41.91 152.64 116 116 0 0 1 151.7 42.3Z"/>
+    <path id="opening" d="M197 48A86 86 0 0 1 264 208A116 116 0 0 0 197 48Z"/>
+    <g id="openings">
+      <use href="#opening"/>
+      <use href="#opening" transform="rotate(45 230 230)"/>
+      <use href="#opening" transform="rotate(90 230 230)"/>
+      <use href="#opening" transform="rotate(135 230 230)"/>
+      <use href="#opening" transform="rotate(180 230 230)"/>
+      <use href="#opening" transform="rotate(225 230 230)"/>
+      <use href="#opening" transform="rotate(270 230 230)"/>
+      <use href="#opening" transform="rotate(315 230 230)"/>
+    </g>
+    <mask id="sign" maskUnits="userSpaceOnUse" x="0" y="0" width="460" height="460">
+      <use href="#outline" fill="white"/>
+      <use href="#openings" fill="black"/>
+    </mask>
+  </defs>
+  <circle cx="320" cy="320" r="292" fill="url(#halo)"/>
+  <circle cx="320" cy="320" r="248" stroke="#7f2136" stroke-opacity=".58" stroke-dasharray="1 8"/>
+  <circle cx="320" cy="320" r="236" stroke="#491d27" stroke-opacity=".58"/>
+  <g transform="translate(94.6 94.6) scale(.98)">
+    <use href="#outline" stroke="#ff003d" stroke-width="10" opacity=".58" filter="url(#glow)"/>
+    <path d="M0 0h460v460H0z" fill="url(#enamel)" mask="url(#sign)"/>
+    <use href="#outline" stroke="url(#rim)" stroke-width="2.5" stroke-linejoin="round"/>
+    <use href="#openings" stroke="url(#rim)" stroke-width="1.7" stroke-linejoin="round" opacity=".81"/>
+  </g>
+</svg>

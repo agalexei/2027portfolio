@@ -1,2 +1,3 @@
+# Owner-only portfolio preview.
 User-agent: *
-Allow: /
+Disallow: /
